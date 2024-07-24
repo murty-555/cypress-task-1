@@ -1,0 +1,15 @@
+{
+    "firstName": "Murthy",
+    "lastName": "Kolati",
+    "email": "murthykolati@gmail.com",
+    "mobileNumber": "9848022338",
+    "gender": "Male",
+    "dateOfBirth": {
+        "year": "1997",
+        "month": "November",
+        "day": "09"
+    },
+    "subjects": "Maths, Physics, Chemistry",
+    "currentAddress": "Amalapuram",
+    "expectedResult": "Thanks for submitting the form"
+}
