@@ -44,7 +44,7 @@ class Form {
     }
 
     fileUpload(){
-        cy.get("#uploadPicture").attachFile("photo.jpeg")
+        cy.get("#uploadPicture").attachFile({filePath: "photo.jpeg", fileName: "passportSizePhoto.jpeg"})
     }
 
     setCurrentAddress(currentAddress){
