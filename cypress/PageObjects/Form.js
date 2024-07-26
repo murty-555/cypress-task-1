@@ -1,66 +1,71 @@
+import locators from "./pageLocators"
+
 class Form {
+    pagelocators = locators
+
     clickFormCategory(){
-        cy.get(".category-cards>:nth-child(2)").click()
+
+        cy.get(this.pagelocators.category).click()
     }
 
     clickPracticeForm(){
-        cy.get(".left-pannel>.accordion>:nth-child(2)>.element-list").click()
+        cy.get(this.pagelocators.practiceForm).click()
     }
 
     setFirstName(firstName){
-        cy.get('#userName-wrapper>:nth-child(2)>#firstName').type(firstName)
+        cy.get(this.pagelocators.firstName).type(firstName)
     }
 
     setLastName(lastName){
-        cy.get('#userName-wrapper>:nth-child(4)>#lastName').type(lastName)
+        cy.get(this.pagelocators.lastName).type(lastName)
     }
 
     setEmail(email){
-        cy.get('#userEmail-wrapper>:nth-child(2)>#userEmail').type(email)
+        cy.get(this.pagelocators.email).type(email)
     }
 
     selectingRadioButton(gender){
-        cy.get("#gender-radio-1").check(gender, {force: true})
+        cy.get(this.pagelocators.gender).check(gender, {force: true})
     }
 
     setMobileNumber(number){
-        cy.get('#userNumber').type(number)
+        cy.get(this.pagelocators.number).type(number)
     }
 
     setDateOfBirth(dateOfBirth){
-        cy.get("#dateOfBirthInput").click()
-        cy.get(".react-datepicker__year-select").select(dateOfBirth.year)
-        cy.get(".react-datepicker__month-select").select(dateOfBirth.month)
-        cy.get(".react-datepicker__day.react-datepicker__day--009.react-datepicker__day--weekend").click()
+        cy.get(this.pagelocators.dob.click).click()
+        cy.get(this.pagelocators.dob.year).select(dateOfBirth.year)
+        cy.get(this.pagelocators.dob.month).select(dateOfBirth.month)
+        cy.get(this.pagelocators.dob.day).click()
     }
 
     setSubjects(subjects){
-        cy.get("#subjectsInput").type(subjects)
+        cy.get(this.pagelocators.subjects).type(subjects)
     }
 
     selectCheckBoxes(){
-        cy.get("#hobbies-checkbox-1").check({force:true})
-        cy.get("#hobbies-checkbox-3").check({force:true})
+        cy.get(this.pagelocators.checkboxes.check1).check({force:true})
+        cy.get(this.pagelocators.checkboxes.check2).check({force:true})
     }
 
     fileUpload(){
-        cy.get("#uploadPicture").attachFile({filePath: "photo.jpeg", fileName: "passportSizePhoto.jpeg"})
+        cy.get(this.pagelocators.fileUpload).attachFile({filePath: "photo.jpeg", fileName: "passportSizePhoto.jpeg"})
     }
 
     setCurrentAddress(currentAddress){
-        cy.get("#currentAddress-wrapper>:nth-child(2)>textarea").type(currentAddress)
+        cy.get(this.pagelocators.currentAddress).type(currentAddress)
     }
 
     submitForm(){
-        cy.get("#submit").click()
+        cy.get(this.pagelocators.submit).click()
     }
 
     VerifyFormSubmission(expectedResult){
-        cy.get("#example-modal-sizes-title-lg").should('have.text', expectedResult)
+        cy.get(this.pagelocators.formSubmission).should('have.text', expectedResult)
     }
 
     TakeScreenshot(){
-        cy.get(".fade.modal-backdrop.show").screenshot()
+        cy.get(this.pagelocators.screenshot).screenshot()
     }
     
 }

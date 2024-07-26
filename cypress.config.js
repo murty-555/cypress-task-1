@@ -8,4 +8,7 @@ module.exports = defineConfig({
       require('cypress-mochawesome-reporter/plugin')(on);
     },
   },
+  env: {
+    url: "https://demoqa.com/"
+  }
 });
