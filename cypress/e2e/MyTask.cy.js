@@ -20,7 +20,7 @@ describe("Test suite", () => {
     
     it("working on form", () => {
         //visiting the page
-        cy.visit("https://demoqa.com/")
+        cy.visit(Cypress.env("url"))
 
         let form = new Form()
 
