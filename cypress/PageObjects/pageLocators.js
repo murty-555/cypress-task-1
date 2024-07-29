@@ -1,4 +1,4 @@
-locators = {
+const locators = {
     category: ".category-cards>:nth-child(2)",
     practiceForm: ".left-pannel>.accordion>:nth-child(2)>.element-list",
     firstName: '#userName-wrapper>:nth-child(2)>#firstName',
